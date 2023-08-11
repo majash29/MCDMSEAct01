@@ -5650,7 +5650,7 @@ s
         <div id="seccionesfases">
           <br><br>
         <div class="tab">
-          <div class="tablinks" onclick="openSeccion(event, 'FaseUno')"> Fase No.01: Procesar </div>
+          <div class="tablinks active" onclick="openSeccion(event, 'FaseUno')"> Fase No.01: Procesar </div>
           <div class="tablinks" onclick="openSeccion(event, 'FaseDos')">Fase No.02: Modelar </div>
           <div class="tablinks" onclick="openSeccion(event, 'FaseTres')">Fase No.03: Visualizar</div>
         </div>
@@ -6954,6 +6954,11 @@ s
       document.getElementById(seccion).style.display = "block";
       evt.currentTarget.className += " active";
     }
+
+    window.onload = function() {
+      var defaultTab = document.getElementById("FaseUno");
+      openSeccion(event, defaultTab.id);
+    };
 
   </script>
 
